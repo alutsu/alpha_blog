@@ -2,3 +2,9 @@
 
 <p>Title: <%= @article.title %></p>
 <p>Description: <%= @article.description %></p>
+<p>
+<%= link_to 'Articles', articles_path %>
+</p>
+<p>
+<td><%= link_to "Edit", edit_article_path(@article) %></td>
+</p>
