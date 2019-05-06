@@ -27,5 +27,10 @@
     <div class="panel-body text-center">
       <%= article.description %>
     </div>
+    <div class="panel-footer">
+      Criado por: <%= article.user.username %>, 
+      <%= time_ago_in_words(article.created_at) %> atrás, 
+      atualizado há <%= time_ago_in_words(article.updated_at) %> atrás
+    </div>
   </div>    
 <% end %>
