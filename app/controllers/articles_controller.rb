@@ -32,9 +32,16 @@ class ArticlesController < ApplicationController
     end
   end
   
-
   def show
     @article = Article.find(params[:id])
+  end
+
+  def destroy
+    @article = Article.find(params[:id])
+    @article.destroy
+
+    flash[:notice] = "Article deleted"
+    redirect_to articles_path
   end
   
   private 
