@@ -1,10 +1,28 @@
 <h1>Showing Selected article</h1>
 
-<p>Title: <%= @article.title %></p>
-<p>Description: <%= @article.description %></p>
-<p>
-<%= link_to 'Articles', articles_path %>
-</p>
-<p>
-<td><%= link_to "Edit", edit_article_path(@article) %></td>
-</p>
+<div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="text-center">
+        <%= @article.title %>
+      </h4>
+      <div class="dropdown pull-right" style="margin-top: -6vh; margin-right: -1vw">
+        <button 
+          class="btn btn-default dropdown-toggle"
+          type="button"
+          id="articlesDropDown"
+          data-toggle="dropdown"
+          aria-haspopup="true" 
+          aria-expanded="true">
+        Menu
+        <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="articlesDropDown">
+          <li><%= link_to "Edit", edit_article_path(@article) %></li>
+          <li><%= link_to "Delete", article_path(@article),method: :delete, data: { confirm: 'Are you sure?' }%></li>
+        </ul>
+      </div>
+    </div>
+    <div class="panel-body text-center">
+      <%= @article.description %>
+    </div>
+  </div>
