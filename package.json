@@ -3,5 +3,9 @@
   "private": true,
   "dependencies": {
     "jquery": "^3.4.1"
+  },
+  "devDependencies": {
+    "@prettier/plugin-ruby": "^0.12.2",
+    "prettier": "^1.17.0"
   }
 }

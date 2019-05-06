@@ -1,2 +1,26 @@
+$navbar-border-radius: 0;
+$navbar-default-bg: #7159c1;
+$navbar-default-link-color: #fff;
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.center {
+  text-align: center;
+}
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #7159c1;
+  color: #777;
+}
+
+footer small {
+  float: left;
+}
+
+footer ul {
+  float: right;
+  list-style: none;
+}
