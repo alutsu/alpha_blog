@@ -17,7 +17,18 @@
     <div class="collapse navbar-collapse" id="my-navbar">
       <ul class="nav navbar-nav">
         <li><%= link_to "Articles", articles_path %></li>
-        <li><%= link_to "New article", new_article_path %></li>
+        <% if logged_in? %>
+          <li><%= link_to "New article", new_article_path %></li>
+        <% end %>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <% if logged_in? %>
+          <li><%= link_to "Log out", logout_path, method: :delete %></li>
+          <li><%= link_to "User Profile", user_path(current_user) %></li>
+        <% else %>
+          <li><%= link_to "Log in", login_path %></li>
+          <li><%= link_to "Sign up", signup_path %></li>
+        <% end %>
       </ul>
     </div>
   </div>
