@@ -4,7 +4,7 @@ class ArticlesController < ApplicationController
   before_action :require_same_user, only: %i[edit update destroy]
 
   def index
-    @articles = Article.paginate(page: params[:page], per_page: 1)
+    @articles = Article.paginate(page: params[:page], per_page: 5)
   end
 
   def new
@@ -51,7 +51,7 @@ class ArticlesController < ApplicationController
     params.require(:article).permit(:title, :description)
   end
   def require_same_user
-    if current_user != @article.user
+    if current_user != @article.user and !current_user.admin?
       flash[:danger] = "Você só pode editar ou deletar se for proprietario do artigo"
       redirect_to root_path
     end
